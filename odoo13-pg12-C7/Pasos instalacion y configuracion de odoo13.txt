@@ -43,7 +43,18 @@ systemctl start postgresql-12
 su - postgres -c "createuser -s odoo"
 
 #Paso 10 - Instalar el complemento Wkhtmltopdf para comvertir HTML en PDF. Descargar el RPM en algun directorio.
-wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox-0.12.5-1.centos7.x86_64.rpm
+yum install -y libpng
+yum install -y libjpeg
+yum install -y openssl
+yum install -y icu
+yum install -y libX11
+yum install -y libXext
+yum install -y libXrender
+yum install -y xorg-x11-fonts-Type1
+yum install -y xorg-x11-fonts-75dpi
+sudo wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox-0.12.5-1.centos7.x86_64.rpm
+rpm -Uvh wkhtmltox-0.12.5-1.centos7.x86_64.rpm
+
 
 #Paso 10.1 - Instalar el RPM wkhtmltox-0.12.5-1.centos7.x86_64 descargado 
 yum localinstall wkhtmltox-0.12.5-1.centos7.x86_64.rpm
