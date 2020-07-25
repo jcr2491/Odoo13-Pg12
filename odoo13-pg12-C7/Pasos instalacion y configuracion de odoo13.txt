@@ -106,6 +106,17 @@ chown odoo13: /var/log/odoo13
 /etc/systemd/system/odoo13.service  
 
 #Paso 15- Activar el servidio de odoo.
+systemctl daemon-reload
+yum install firewalld
+systemctl unmask --now firewalld
+systemctl start firewalld
+systemctl status firewalld
+firewall-cmd --list-all
+firewall-cmd --permanent --zone=public --add-port=8069/tcp
+firewall-cmd --reload
+
+systemctl status postgresql-12
+
 systemctl enable odoo13
 
 #Paso 16 - Revisar el estado e iniciar odoo13
