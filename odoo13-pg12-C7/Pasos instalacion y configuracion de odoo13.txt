@@ -100,7 +100,7 @@ exit
 
 #Paso 13 - Crear el directorio de logs y asignar permisos a odoo
 mkdir /var/log/odoo13
-chown odoo13: /var/log/odoo13
+chown odoo: /var/log/odoo13
 
 #Paso 14- Crear el archivo del sistema de odoo en el directorio /etc/systemd/system/ El nombre del archivo es personalizado. ejemplo.
 /etc/systemd/system/odoo13.service  
